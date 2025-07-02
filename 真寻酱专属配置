@@ -951,6 +951,9 @@ function main(config) {
     "RULE-SET,cn-domain,DIRECT",
     "RULE-SET,bilibili-ip,bilibili",
     "RULE-SET,private-ip,DIRECT",
+    "RULE-SET,steampowered-ip,DIRECT",
+    "RULE-SET,steam-ip,DIRECT",
+    "RULE-SET,store-ip,DIRECT",
     "GEOIP,cn,DIRECT",
     "MATCH,Final"
   ];
