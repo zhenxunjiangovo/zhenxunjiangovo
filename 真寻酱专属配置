@@ -222,7 +222,7 @@ function main(config) {
       "proxies": ["TW-Auto", "TW-FallBack", "TW-LoadBalance"],
       "include-all": true,
       "filter": "(?i)🇨🇳|🇹🇼|台湾|(\b(TW|Tai|Taiwan)\b)",
-      "icon": "https://gh-proxy.com/https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China.png"
+      "icon": "https://gh-proxy.com/https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png"
     },
     {
       ...groupBaseOption,
@@ -233,7 +233,7 @@ function main(config) {
       "include-all": true,
       "hidden": true,
       "filter": "(?i)🇨🇳|🇹🇼|台湾|(\b(TW|Tai|Taiwan)\b)",
-      "icon": "https://gh-proxy.com/https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China.png"
+      "icon": "https://gh-proxy.com/https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png"
     },
     {
       ...groupBaseOption,
@@ -243,7 +243,7 @@ function main(config) {
       "include-all": true,
       "hidden": true,
       "filter": "(?i)🇨🇳|🇹🇼|台湾|(\b(TW|Tai|Taiwan)\b)",
-      "icon": "https://gh-proxy.com/https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China.png"
+      "icon": "https://gh-proxy.com/https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png"
     },
     {
       ...groupBaseOption,
@@ -253,7 +253,7 @@ function main(config) {
       "include-all": true,
       "hidden": true,
       "filter": "(?i)🇨🇳|🇹🇼|台湾|(\b(TW|Tai|Taiwan)\b)",
-      "icon": "https://gh-proxy.com/https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China.png"
+      "icon": "https://gh-proxy.com/https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png"
     },
     {
       ...groupBaseOption,
@@ -452,7 +452,28 @@ function main(config) {
       "lazy": true,
       "include-all": true,
       "hidden": true,
- ://gh-proxy.com/https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Russia.png"
+      "filter": "(?i)🇫🇷|法国|(\b(FRA|France)\b)",
+      "icon": "https://gh-proxy.com/https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/France.png"
+    },
+    {
+      ...groupBaseOption,
+      "name": "俄罗斯",
+      "type": "select",
+      "proxies": ["RU-Auto", "RU-FallBack", "RU-LoadBalance"],
+      "include-all": true,
+      "filter": "(?i)🇷🇺|俄罗斯|(\b(RU|Russia)\b)",
+      "icon": "https://gh-proxy.com/https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Russia.png"
+    },
+    {
+      ...groupBaseOption,
+      "name": "RU-Auto",
+      "type": "url-test",
+      "tolerance": 50,
+      "lazy": true,
+      "include-all": true,
+      "hidden": true,
+      "filter": "(?i)🇷🇺|俄罗斯|(\b(RU|Russia)\b)",
+      "icon": "https://gh-proxy.com/https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Russia.png"
     },
     {
       ...groupBaseOption,
@@ -651,7 +672,16 @@ function main(config) {
       "lazy": true,
       "include-all": true,
       "hidden": true,
-      "filter": "(?=.*(.))(?!.*((?i)群|邀请|返利|循环ior": "domain",
+      "filter": "(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|(\b(USE|USED|TOTAL|Traffic|Expire|EMAIL|Panel|Channel|Author)\b|(\d{4}-\d{2}-\d{2}|\d+G)))).*$",
+      "icon": "https://gh-proxy.com/https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Airport.png"
+    }
+  ];
+
+  // 覆盖规则集
+  config["rule-providers"] = {
+    "private-domain": {
+      ...ruleProviderCommon,
+      "behavior": "domain",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs",
       "path": "./rules/private-domain.mrs",
       "type": "http",
@@ -951,9 +981,6 @@ function main(config) {
     "RULE-SET,cn-domain,DIRECT",
     "RULE-SET,bilibili-ip,bilibili",
     "RULE-SET,private-ip,DIRECT",
-    "RULE-SET,steampowered-ip,DIRECT",
-    "RULE-SET,steam-ip,DIRECT",
-    "RULE-SET,store-ip,DIRECT",
     "GEOIP,cn,DIRECT",
     "MATCH,Final"
   ];
